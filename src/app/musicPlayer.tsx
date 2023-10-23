@@ -1,9 +1,16 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 function MusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [audio, setAudio] = useState<HTMLAudioElement | null>(null)
+
+  useEffect(() => {
+    setAudio(new Audio("/static/starry-night (1).mp3"))
+  // only run once on the first render on the client
+  }, [])
+
   const song = new Audio("/static/starry-night (1).mp3");
 
   const audioRef = useRef<HTMLAudioElement>(song);
