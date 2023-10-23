@@ -1,9 +1,9 @@
-import MusicPlayer from "./musicPlayer";
+import Card from "./components/Card";
 
 export default function Home() {
   return (
-    <div className="bg-red-500 h-screen flex justify-center">
-      <MusicPlayer/>
+    <div className="h-screen flex items-center justify-center bg-fourth">
+      <Card/>
     </div>
   )
 }

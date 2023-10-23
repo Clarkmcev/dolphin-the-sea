@@ -1,17 +1,14 @@
-'use client';
+"use client";
 
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState } from "react";
 
 function MusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
+  const song = new Audio("/static/starry-night (1).mp3");
 
-  const audioRef = useRef<HTMLAudioElement>(
-    new Audio('/static/starry-night (1).mp3')
-  );
-  const MAX = 100;
+  const audioRef = useRef<HTMLAudioElement>(song);
 
   function toggleAudio(): void {
-    console.log(audioRef.current)
     if (isPlaying) {
       audioRef.current?.pause();
     } else {
@@ -20,10 +17,9 @@ function MusicPlayer() {
     setIsPlaying(!isPlaying);
   }
 
-
   return (
     <div>
-      <button onClick={toggleAudio}>{isPlaying ? 'Pause' : 'Play'}</button>
+      <button className="bg-primary" onClick={toggleAudio}>{isPlaying ? "Pause" : "Play"}</button>
     </div>
   );
 }
