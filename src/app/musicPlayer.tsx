@@ -1,15 +1,18 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import { PlayIconOutline, PlayIconSolid } from "./components/icons/PlayIcon";
+import { PauseIconOutline, PauseIconSolid } from "./components/icons/PauseIcon";
+import CustomButton from "./components/Card/CustomButton";
 
 function MusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [audio, setAudio] = useState<HTMLAudioElement | null>(null)
+  const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    setAudio(new Audio("/static/starry-night (1).mp3"))
-  // only run once on the first render on the client
-  }, [])
+    setAudio(new Audio("/static/starry-night (1).mp3"));
+    // only run once on the first render on the client
+  }, []);
 
   const song = new Audio("/static/starry-night (1).mp3");
 
@@ -26,7 +29,21 @@ function MusicPlayer() {
 
   return (
     <div>
-      <button className="bg-primary" onClick={toggleAudio}>{isPlaying ? "Pause" : "Play"}</button>
+      <button className="" onClick={toggleAudio}>
+        {isPlaying ? (
+          <CustomButton
+            onClick={toggleAudio}
+            solid={<PlayIconSolid className="w-10-10" />}
+            outline={<PlayIconOutline className="w-10 h-10" />}
+          />
+        ) : (
+          <CustomButton
+            onClick={toggleAudio}
+            solid={<PauseIconSolid className="w-10-10" />}
+            outline={<PauseIconOutline className="w-10 h-10" />}
+          />
+        )}
+      </button>
     </div>
   );
 }
