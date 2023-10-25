@@ -5,10 +5,12 @@ import { PlayIconOutline, PlayIconSolid } from "./components/icons/PlayIcon";
 import { PauseIconOutline, PauseIconSolid } from "./components/icons/PauseIcon";
 import CustomButton from "./components/Card/CustomButton";
 import { StopIconOutline, StopIconSolid } from "./components/icons/StopIcon";
+import Slider from "./components/Slider";
 
 function MusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
+  const [value, setValue] = useState(10)
 
   const iconStyle = "w-10 h-10";
 
@@ -22,7 +24,6 @@ function MusicPlayer() {
   const audioRef = useRef<HTMLAudioElement>(song);
 
   function toggleAudio(): void {
-    console.log(audioRef)
     if (isPlaying) {
       audioRef.current?.pause();
     } else {
@@ -31,29 +32,36 @@ function MusicPlayer() {
     setIsPlaying(!isPlaying);
   }
 
+  function stopAudio(): void {
+    // audioRef.current?.stop();
+  }
+
+  function onSlide(value: number): void {
+    setValue(value)
+  }
+
   return (
     <div>
-      <div>
-        {isPlaying ? (
-          <CustomButton
-            onClick={toggleAudio}
-            solid={<PauseIconSolid className={iconStyle} />}
-            outline={<PauseIconSolid className={iconStyle} />}
-          />
-        ) : (
-          <CustomButton
-            onClick={toggleAudio}
-            solid={<PlayIconSolid className={iconStyle} />}
-            outline={<PlayIconOutline className={iconStyle} />}
-          />
-        )}
-        {/* Stop button */}
+      {isPlaying ? (
         <CustomButton
           onClick={toggleAudio}
-          solid={<StopIconSolid className={iconStyle} />}
-          outline={<StopIconOutline className={iconStyle} />}
+          solid={<PauseIconSolid className={iconStyle} />}
+          outline={<PauseIconSolid className={iconStyle} />}
         />
-      </div>
+      ) : (
+        <CustomButton
+          onClick={toggleAudio}
+          solid={<PlayIconSolid className={iconStyle} />}
+          outline={<PlayIconOutline className={iconStyle} />}
+        />
+      )}
+      {/* Stop button */}
+      <CustomButton
+        onClick={toggleAudio}
+        solid={<StopIconSolid className={iconStyle} />}
+        outline={<StopIconOutline className={iconStyle} />}
+      />
+      <Slider min={1} max={100} value={value} onChange={onSlide}/>
     </div>
   );
 }

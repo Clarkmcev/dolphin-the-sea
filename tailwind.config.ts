@@ -7,15 +7,15 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    colors: {
-      transparent: 'transparent',
-      current: 'currentColor',
-      primary: '#E8FFCE',
-      secondary: '#ACFADF',
-      ternary: '#94ADD7',
-      fourth: '#7C73C0'
-    },
     extend: {
+      colors: {
+        transparent: 'transparent',
+        current: 'currentColor',
+        primary: '#E8FFCE',
+        secondary: '#ACFADF',
+        ternary: '#94ADD7',
+        fourth: '#7C73C0'
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
