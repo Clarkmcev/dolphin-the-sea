@@ -10,7 +10,6 @@ import Slider from "./components/Slider";
 function MusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
-  const [value, setValue] = useState(10)
 
   const iconStyle = "w-10 h-10";
 
@@ -37,7 +36,6 @@ function MusicPlayer() {
   }
 
   function onSlide(value: number): void {
-    setValue(value)
   }
 
   return (
@@ -61,7 +59,7 @@ function MusicPlayer() {
         solid={<StopIconSolid className={iconStyle} />}
         outline={<StopIconOutline className={iconStyle} />}
       />
-      <Slider min={1} max={100} value={value} onChange={onSlide}/>
+      <Slider min={1} max={100} onChange={onSlide}/>
     </div>
   );
 }
