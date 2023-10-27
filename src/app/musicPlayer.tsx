@@ -5,21 +5,16 @@ import { PlayIconOutline, PlayIconSolid } from "./components/icons/PlayIcon";
 import { PauseIconOutline, PauseIconSolid } from "./components/icons/PauseIcon";
 import CustomButton from "./components/Card/CustomButton";
 import { StopIconOutline, StopIconSolid } from "./components/icons/StopIcon";
-import Slider from "./components/Slider";
+import Slider from "./components/Slider/SliderVolume";
+import SliderVolume from "./components/Slider/SliderVolume";
+import SliderTime from "./components/Slider/SliderTime";
 
 function MusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
+  const [volume, setVolume] = useState(50);
 
   const iconStyle = "w-10 h-10";
-
-  useEffect(() => {
-    setAudio(new Audio("/static/starry-night (1).mp3"));
-    // only run once on the first render on the client
-  }, []);
-
   const song = new Audio("/static/starry-night (1).mp3");
-
   const audioRef = useRef<HTMLAudioElement>(song);
 
   function toggleAudio(): void {
@@ -31,15 +26,15 @@ function MusicPlayer() {
     setIsPlaying(!isPlaying);
   }
 
-  function stopAudio(): void {
-    // audioRef.current?.stop();
-  }
+  const handleVolumeChange = (event: any) => {
+    const volume = event.target.value;
+    audioRef.current.volume = volume / 100
+    setVolume(volume);
+  };
 
-  function onSlide(value: number): void {
-  }
 
   return (
-    <div>
+    <div className="flex items-center w-full justify-center">
       {isPlaying ? (
         <CustomButton
           onClick={toggleAudio}
@@ -59,7 +54,9 @@ function MusicPlayer() {
         solid={<StopIconSolid className={iconStyle} />}
         outline={<StopIconOutline className={iconStyle} />}
       />
-      <Slider min={1} max={100} onChange={onSlide}/>
+      <SliderVolume volume={volume} setVolume={setVolume} handleVolumeChange={handleVolumeChange}/>
+      <SliderTime audioRef={audioRef} />
+
     </div>
   );
 }

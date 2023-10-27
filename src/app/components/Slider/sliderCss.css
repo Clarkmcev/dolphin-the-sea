@@ -1,0 +1,32 @@
+/* VolumeControl.css */
+.volume-slider {
+    width: 100%; /* Adjust the width as needed */
+    height: 10px; /* Adjust the height as needed */
+    background-color: #007bff; /* Change the background color */
+    border: none; /* Remove the default border */
+    outline: none; /* Remove the focus outline */
+    border-radius: 5px; /* Add rounded corners */
+    -webkit-appearance: none; /* Remove default appearance on Safari */
+  }
+  
+  /* Styling the thumb (slider handle) */
+  .volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px; /* Adjust the width of the thumb */
+    height: 20px; /* Adjust the height of the thumb */
+    background-color: #fff; /* Change the color of the thumb */
+    border: 2px solid #007bff; /* Add a border to the thumb */
+    border-radius: 50%; /* Make the thumb circular */
+    cursor: pointer;
+  }
+  
+  /* Styling for different browsers */
+  .volume-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border: 2px solid #007bff;
+    border-radius: 50%;
+    cursor: pointer;
+  }
