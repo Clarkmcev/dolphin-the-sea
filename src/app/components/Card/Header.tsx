@@ -1,23 +1,9 @@
-import React from "react";
-import path from "../../../../static/R-17161240-1611927201-5486.jpg";
-import Image from "next/image";
+import React from 'react'
 
 function Header() {
   return (
-    <div className="flex-col flex items-center space-y-8 justify-center bg-red-500 py-10">
-      <Image
-        src={path}
-        width={500}
-        height={500}
-        alt="Picture of the author"
-        className="rounded-lg"
-      />
-      <div className="flex flex-col space-y-2 items-center my-20">
-        <p className="text-3xl">Starry night</p>
-        <p className="text-lg">Peggy Gou</p>
-      </div>
-    </div>
-  );
+    <div>CardHeader</div>
+  )
 }
 
-export default Header;
+export default Header

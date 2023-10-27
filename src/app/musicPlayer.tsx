@@ -7,7 +7,7 @@ import CustomButton from "./components/Card/CustomButton";
 import { StopIconOutline, StopIconSolid } from "./components/icons/StopIcon";
 import SliderVolume from "./components/Slider/SliderVolume";
 import SliderTime from "./components/Slider/SliderTime";
-import Header from "./components/Card/Header";
+import Content from "./components/Card/Content";
 
 function MusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -30,7 +30,7 @@ function MusicPlayer() {
         <SliderVolume
           audioRef={audioRef}
         />
-      <Header />
+      <Content />
       <div className="flex items-center w-full justify-center">
         {isPlaying ? (
           <CustomButton

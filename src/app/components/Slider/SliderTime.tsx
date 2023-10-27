@@ -26,7 +26,7 @@ function SliderTime({ audioRef }: Props) {
           audio.removeEventListener('timeupdate', updateTime);
           audio.removeEventListener('loadedmetadata', updateDuration);
         };
-      }, []);
+      },);
 
       const handleTimeChange = (event: any) => {
         const audio = audioRef.current;
