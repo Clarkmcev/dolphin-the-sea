@@ -20,11 +20,12 @@ function CustomButton({ onClick, outline, solid }: Props) {
 
   return (
     <button
+      className="rounded-full p-2"
       onClick={onClick}
       onMouseEnter={toggleHoverIn}
       onMouseLeave={toggleHoverOut}
     >
-      <div className="w-10 h-10">{hover ? solid : outline}</div>
+      {hover ? solid : outline}
     </button>
   );
 }

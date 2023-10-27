@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import './sliderCss.css'
 
 interface Props {
     audioRef: any
@@ -43,6 +44,7 @@ function SliderTime({ audioRef }: Props) {
         max={duration}
         value={currentTime}
         onChange={handleTimeChange}
+        className="cursor-pointer volume-slider"
       />
     </div>
   );

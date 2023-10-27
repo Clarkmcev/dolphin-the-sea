@@ -3,7 +3,7 @@ import React from 'react'
 
 function Card() {
   return (
-    <div className="max-w-2xl bg-green-300 m-auto h-full w-full">
+    <div className="max-w-2xl m-auto h-full w-full bg-secondary">
       <MusicPlayer/>
     </div>
   )

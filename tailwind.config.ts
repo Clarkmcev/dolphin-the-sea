@@ -11,10 +11,10 @@ const config: Config = {
       colors: {
         transparent: 'transparent',
         current: 'currentColor',
-        primary: '#E8FFCE',
-        secondary: '#ACFADF',
-        ternary: '#94ADD7',
-        fourth: '#7C73C0'
+        primary: '#2C3333',
+        secondary: '#395B64',
+        ternary: '#A5C9CA',
+        fourth: '#E7F6F2'
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

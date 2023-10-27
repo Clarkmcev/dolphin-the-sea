@@ -2,9 +2,9 @@ import React from "react";
 import path from "../../../../static/R-17161240-1611927201-5486.jpg";
 import Image from "next/image";
 
-function CardContent() {
+function Content() {
   return (
-    <div className="flex-col flex items-center space-y-8 justify-center bg-red-500 py-10">
+    <div className="flex-col flex items-center space-y-8 justify-center py-10">
       <Image
         src={path}
         width={500}
@@ -20,4 +20,4 @@ function CardContent() {
   );
 }
 
-export default CardContent;
+export default Content;

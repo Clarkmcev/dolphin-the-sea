@@ -15,7 +15,7 @@ function SliderVolume({ audioRef } : Props) {
       };
 
   return (
-    <div className="w-2/5 m-auto my-2">
+    <div className="w-2/5">
       <input
         type="range"
         min="0"
