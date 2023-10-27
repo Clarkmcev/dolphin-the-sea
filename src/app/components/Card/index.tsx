@@ -1,11 +1,9 @@
 import MusicPlayer from '@/app/musicPlayer'
 import React from 'react'
-import Header from './Header'
 
 function Card() {
   return (
-    <div className="bg-red-500 max-w-lg w-full rounded-lg">
-      <Header/>
+    <div className="max-w-2xl bg-green-300 m-auto h-full w-full">
       <MusicPlayer/>
     </div>
   )
