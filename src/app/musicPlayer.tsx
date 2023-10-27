@@ -23,7 +23,7 @@ function MusicPlayer() {
 
   return (
     <div className="pt-20">
-      <Header audioRef={audioRef} />
+      {/* <Header audioRef={audioRef} /> */}
       <Content />
       <div className="flex items-center w-full justify-center">
         <div className="w-full">

@@ -3,11 +3,10 @@ import { PlayIconOutline, PlayIconSolid } from "../icons/PlayIcon";
 
 interface Props {
   onClick: () => void;
-  solid: ReactElement;
   outline: ReactElement;
 }
 
-function CustomButton({ onClick, outline, solid }: Props) {
+function CustomButton({ onClick, outline }: Props) {
   const [hover, setHover] = useState(false);
 
   function toggleHoverIn(): void {
@@ -25,7 +24,7 @@ function CustomButton({ onClick, outline, solid }: Props) {
       onMouseEnter={toggleHoverIn}
       onMouseLeave={toggleHoverOut}
     >
-      {hover ? solid : outline}
+      {outline}
     </button>
   );
 }

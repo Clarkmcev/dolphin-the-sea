@@ -18,26 +18,22 @@ function PlayNavigation({ audioRef, onClick, isPlaying }: Props) {
       {/* Left next button */}
       <CustomButton
         onClick={onClick}
-        solid={<NextIconSolid className={`${ICON_STYLING_SECONDARY} rotate-180`} />}
         outline={<NextIconOutline className={`${ICON_STYLING_SECONDARY} rotate-180`} />}
       />
       {isPlaying ? (
         <CustomButton
           onClick={onClick}
-          solid={<PauseIconSolid className={ICON_STYLING_PRIMARY} />}
-          outline={<PauseIconSolid className={ICON_STYLING_PRIMARY} />}
+          outline={<PauseIconSolid className={ICON_STYLING_PRIMARY}  />}
         />
       ) : (
         <CustomButton
           onClick={onClick}
-          solid={<PlayIconSolid className={ICON_STYLING_PRIMARY} />}
-          outline={<PlayIconOutline className={ICON_STYLING_PRIMARY} />}
+          outline={<PlayIconSolid className={ICON_STYLING_PRIMARY} />}
         />
       )}
       {/* Right next button */}
       <CustomButton
         onClick={onClick}
-        solid={<NextIconSolid className={ICON_STYLING_SECONDARY} />}
         outline={<NextIconOutline className={ICON_STYLING_SECONDARY} />}
       />
       {/* Stop button */}

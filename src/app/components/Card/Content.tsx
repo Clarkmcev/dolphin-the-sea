@@ -12,9 +12,9 @@ function Content() {
         alt="Picture of the author"
         className="rounded-lg"
       />
-      <div className="flex flex-col space-y-2 items-center my-20">
+      <div className="flex flex-col space-y-2 text-fourth items-center my-20">
         <p className="text-3xl">Starry night</p>
-        <p className="text-lg">Peggy Gou</p>
+        <p className="text-lg text-ternary">Peggy Gou</p>
       </div>
     </div>
   );
