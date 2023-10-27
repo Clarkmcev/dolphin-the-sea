@@ -4,9 +4,18 @@ import Image from "next/image";
 
 function Header() {
   return (
-    <div className="flex-col flex items-center space-y-8 justify-center m-10">
-      <Image src={path} width={500} height={500} alt="Picture of the author" className="rounded-lg" />
-      <div className="text-2xl">Peggy gou</div>
+    <div className="flex-col flex items-center space-y-8 justify-center bg-red-500 py-10">
+      <Image
+        src={path}
+        width={500}
+        height={500}
+        alt="Picture of the author"
+        className="rounded-lg"
+      />
+      <div className="flex flex-col space-y-2 items-center my-20">
+        <p className="text-3xl">Starry night</p>
+        <p className="text-lg">Peggy Gou</p>
+      </div>
     </div>
   );
 }
