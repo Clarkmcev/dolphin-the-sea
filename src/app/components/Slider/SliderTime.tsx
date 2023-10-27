@@ -37,15 +37,17 @@ function SliderTime({ audioRef }: Props) {
     
 
   return (
-    <div>
+    <div className="flex items-center">
+        <p>Time here</p>
       <input
         type="range"
         min={0}
         max={duration}
         value={currentTime}
         onChange={handleTimeChange}
-        className="cursor-pointer volume-slider"
-      />
+        className="cursor-pointer time-slider"
+        />
+        <p>Time here</p>
     </div>
   );
 }

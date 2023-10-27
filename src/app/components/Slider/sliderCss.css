@@ -33,3 +33,39 @@
   border: 2px solid #007bff;
   cursor: pointer;
 }
+
+/* TimeSlider.css */
+.time-slider {
+  width: 100%; /* Adjust the width as needed */
+  height: 5px; /* Adjust the height as needed */
+  background-color: #A5C9CA; /* Change the background color */
+  border: none; /* Remove the default border */
+  outline: none; /* Remove the focus outline */
+  border-radius: 5px; /* Make the thumb circular */
+  -webkit-appearance: none; /* Remove default appearance on Safari */
+}
+
+/* Styling the thumb (slider handle) */
+.time-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px; /* Adjust the width of the thumb */
+  height: 20px; /* Adjust the height of the thumb */
+  background-color: #E7F6F2; /* Change the color of the thumb */
+  border-radius: 100%; /* Make the thumb circular */
+  cursor: pointer;
+}
+
+.time-slider::-webkit-slider-thumb:hover {
+  background-color: #A5C9CA;
+
+}
+
+/* Styling for different browsers */
+.time-slider::-moz-range-thumb {
+  width: 20px;
+  height: 2px;
+  background-color: #fff;
+  border: 2px solid #007bff;
+  cursor: pointer;
+}

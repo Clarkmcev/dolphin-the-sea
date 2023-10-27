@@ -22,7 +22,7 @@ function SliderVolume({ audioRef } : Props) {
         max="100"
         value={volume}
         onChange={handleVolumeChange}
-        className="cursor-pointer volume-slider"
+        className="cursor-pointer time-slider"
       />
     </div>
   );
