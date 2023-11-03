@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import './sliderCss.css'
 
 interface Props {
@@ -9,15 +9,19 @@ function SliderTime({ audioRef }: Props) {
     const [currentTime, setCurrentTime] = useState(0)
     const [duration, setDuration] = useState(0)
 
+    function roundUp(n : number) {
+      return Math.ceil(n);
+    }
+
     useEffect(() => {
         const audio = audioRef.current;
     
         const updateTime = () => {
-          setCurrentTime(audio.currentTime);
+          setCurrentTime(roundUp(audio.currentTime));
         };
     
         const updateDuration = () => {
-          setDuration(audio.duration);
+          setDuration(roundUp(audio.duration));
         };
     
         audio.addEventListener('timeupdate', updateTime);
@@ -37,8 +41,9 @@ function SliderTime({ audioRef }: Props) {
     
 
   return (
-    <div className="flex items-center">
-        <p>Time here</p>
+    <div className="flex items-center px-6">
+      {/* Time */}
+      <p className="px-4">{currentTime}</p>
       <input
         type="range"
         min={0}
@@ -47,7 +52,7 @@ function SliderTime({ audioRef }: Props) {
         onChange={handleTimeChange}
         className="cursor-pointer time-slider"
         />
-        <p>Time here</p>
+        <p className="px-4">{duration-currentTime}</p>
     </div>
   );
 }
