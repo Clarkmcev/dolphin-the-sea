@@ -43,8 +43,7 @@ function SliderTime({ audioRef }: Props) {
 
   return (
     <div className="flex items-center px-6">
-      {/* Time */}
-      <p className="px-4">{secondsToHms(currentTime)}</p>
+      <p className="px-4 text-ternary">{secondsToHms(currentTime)}</p>
       <input
         type="range"
         min={0}
@@ -53,7 +52,7 @@ function SliderTime({ audioRef }: Props) {
         onChange={handleTimeChange}
         className="cursor-pointer time-slider"
         />
-        <p className="px-4">{secondsToHms(duration-currentTime)}</p>
+        <p className="px-4 text-ternary">{secondsToHms(duration-currentTime)}</p>
     </div>
   );
 }
