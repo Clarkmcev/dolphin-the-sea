@@ -37,10 +37,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Backlog
 
-Coming features
-
+- Responsiveness
 - User authentication
 - Backend implementation
+- Database
 - Song selections
-
-
