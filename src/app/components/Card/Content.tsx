@@ -7,10 +7,10 @@ function Content() {
     <div className="flex-col flex items-center space-y-8 justify-center py-10">
       <Image
         src={path}
-        width={500}
-        height={500}
+        width={400}
+        height={400}
         alt="Picture of the author"
-        className="rounded-lg"
+        className="rounded-lg shadow-lg"
       />
       <div className="flex flex-col space-y-2 text-fourth items-center my-20">
         <p className="text-3xl">Starry night</p>

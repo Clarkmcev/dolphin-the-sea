@@ -5,6 +5,7 @@ import SliderTime from "./components/Slider/SliderTime";
 import Content from "./components/Card/Content";
 import Header from "./components/Card/Header";
 import PlayNavigation from "./components/Card/PlayNavigation";
+import Selection from "./components/Selection";
 
 function MusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -22,8 +23,7 @@ function MusicPlayer() {
   }
 
   return (
-    <div className="pt-20">
-      {/* <Header audioRef={audioRef} /> */}
+    <div>
       <Content />
       <div className="flex items-center w-full justify-center">
         <div className="w-full">
@@ -33,6 +33,7 @@ function MusicPlayer() {
             audioRef={audioRef}
             onClick={toggleAudio}
           />
+          <Selection/>
         </div>
       </div>
     </div>
