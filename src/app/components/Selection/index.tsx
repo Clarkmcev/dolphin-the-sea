@@ -1,11 +1,12 @@
 import React from "react";
 import { songs } from "../../../../data/songs";
+import Row from "./Row";
 
 function Selection() {
   return (
-    <div>
+    <div className="w-full">
       {songs.map((song: any, i: any) => (
-        <div key={i}>{song.title}</div>
+        <Row key={i} song={song} />
       ))}
     </div>
   );
