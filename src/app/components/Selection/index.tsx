@@ -4,7 +4,7 @@ import Row from "./Row";
 
 function Selection() {
   return (
-    <div className="w-full">
+    <div className="w-full overflow-auto">
       {songs.map((song: any, i: any) => (
         <Row key={i} song={song} />
       ))}

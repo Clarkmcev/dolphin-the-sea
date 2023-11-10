@@ -7,8 +7,8 @@ function Content() {
     <div className="flex-col flex items-center space-y-8 justify-center py-10">
       <Image
         src={path}
-        width={400}
-        height={400}
+        width={350}
+        height={350}
         alt="Picture of the author"
         className="rounded-lg shadow-lg"
       />

@@ -3,7 +3,6 @@
 import React, { useRef, useState } from "react";
 import SliderTime from "./components/Slider/SliderTime";
 import Content from "./components/Card/Content";
-import Header from "./components/Card/Header";
 import PlayNavigation from "./components/Card/PlayNavigation";
 import Selection from "./components/Selection";
 
@@ -23,7 +22,7 @@ function MusicPlayer() {
   }
 
   return (
-    <div>
+    <div className="h-screen bg-red-500">
       <Content />
       <div className="flex items-center w-full justify-center">
         <div className="w-full">
@@ -33,6 +32,7 @@ function MusicPlayer() {
             audioRef={audioRef}
             onClick={toggleAudio}
           />
+          {/* <div className="bg-green-500">www</div> */}
           <Selection/>
         </div>
       </div>
