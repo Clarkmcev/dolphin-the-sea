@@ -22,7 +22,7 @@ function MusicPlayer() {
   }
 
   return (
-    <div className="h-screen bg-red-500">
+    <div className="h-screen">
       <Content />
       <div className="flex items-center w-full justify-center">
         <div className="w-full">
