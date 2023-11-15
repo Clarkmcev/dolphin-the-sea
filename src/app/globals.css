@@ -25,3 +25,74 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+html,
+body {
+  height: 100%;
+}
+
+/* Resetting default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Full height for HTML and body */
+html,
+body {
+  height: 100%;
+}/* Resetting default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Full height for HTML and body */
+html,
+body {
+  height: 100%;
+}
+
+/* Wrapper for the divs, aligns them vertically */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Scrollable div */
+.scrollable {
+  flex: 1; /* Takes remaining space */
+  overflow-y: auto; /* Enables vertical scrolling */
+  border: 1px solid #ccc; /* Optional: Border for visualization */
+}
+
+/* Fixed div */
+.fixed {
+  width: 200px; /* Fixed width */
+  background-color: #f0f0f0;
+  /* Additional styling for fixed div */
+}
+
+
+/* Container for both divs */
+.container {
+  display: flex;
+  height: 100%;
+}
+
+/* Scrollable div */
+.scrollable {
+  flex: 1; /* Takes remaining space */
+  overflow-y: auto; /* Enables vertical scrolling */
+  border: 1px solid #ccc; /* Optional: Border for visualization */
+}
+
+/* Fixed div */
+.fixed {
+  width: 200px; /* Fixed width */
+  background-color: #f0f0f0;
+  /* Additional styling for fixed div */
+}

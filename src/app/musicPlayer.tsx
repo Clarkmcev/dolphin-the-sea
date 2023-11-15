@@ -22,9 +22,15 @@ function MusicPlayer() {
   }
 
   return (
-    <div className="h-screen">
+    <div className="wrapper bg-red-500">
       <Content />
-      <div className="flex items-center w-full justify-center">
+      <div className="scrollable">
+        <div className="h-96">HELLO</div>
+        <div className="h-96">HELLO</div>
+        <div className="h-96">HELLO</div>
+      </div>
+
+      {/* <div className="flex items-center w-full justify-center">
         <div className="w-full">
           <SliderTime audioRef={audioRef} />
           <PlayNavigation
@@ -32,10 +38,9 @@ function MusicPlayer() {
             audioRef={audioRef}
             onClick={toggleAudio}
           />
-          {/* <div className="bg-green-500">www</div> */}
           <Selection/>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -4,7 +4,7 @@ import Image from "next/image";
 
 function Content() {
   return (
-    <div className="flex-col flex items-center space-y-8 justify-center py-10">
+    <div className="fixed flex-col flex items-center space-y-8 justify-center py-10">
       <Image
         src={path}
         width={350}
