@@ -25,3 +25,10 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+  /* Full height for HTML and body */
+  html,
+  body {
+    height: 100%;
+  }
+  

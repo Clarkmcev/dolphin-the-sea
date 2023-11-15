@@ -10,7 +10,7 @@ function Content() {
         width={350}
         height={350}
         alt="Picture of the author"
-        className="rounded-lg shadow-lg"
+        className="rounded-lg shadow-lg border-2"
       />
       <div className="flex flex-col space-y-2 text-fourth items-center my-20">
         <p className="text-3xl">Starry night</p>
