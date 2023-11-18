@@ -36,12 +36,6 @@ function PlayNavigation({ audioRef, onClick, isPlaying }: Props) {
         onClick={onClick}
         outline={<NextIconOutline className={ICON_STYLING_SECONDARY} />}
       />
-      {/* Stop button */}
-      {/* <CustomButton
-        onClick={onClick}
-        solid={<StopIconSolid className={ICON_STYLING} />}
-        outline={<StopIconOutline className={ICON_STYLING} />}
-      /> */}
     </div>
   );
 }
