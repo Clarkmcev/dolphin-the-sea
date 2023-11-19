@@ -21,3 +21,4 @@ bun dev
 - Backend implementation
 - Database
 - Song selections
+- Connect soundcloud API
