@@ -1,12 +1,16 @@
-import MusicPlayer from '@/app/musicPlayer'
-import React from 'react'
+import MusicPlayer from "@/app/musicPlayer";
+import React from "react";
 
-function Card() {
-  return (
-    <div className="max-w-xl m-auto w-full bg-secondary">
-      <MusicPlayer/>
-    </div>
-  )
+interface Props {
+  className?: string;
 }
 
-export default Card
+function Card({ className }: Props = {}) {
+  return (
+    <div className={`max-w-2xl m-auto w-full bg-secondary ${className}`}>
+      <MusicPlayer />
+    </div>
+  );
+}
+
+export default Card;

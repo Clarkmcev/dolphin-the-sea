@@ -22,7 +22,7 @@ function MusicPlayer() {
   }
 
   return (
-    <div className="flex-col flex h-screen">
+    <div className="z-20 flex-col flex h-screen">
       <div>
         <Content />
         <SliderTime audioRef={audioRef} />
