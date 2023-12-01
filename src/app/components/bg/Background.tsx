@@ -3,16 +3,16 @@
 import React, { useEffect } from "react";
 import anime from "animejs/lib/anime.es.js";
 
-const GRID_SIZE = 40;
+const GRID_SIZE = 100;
 
 const GRID_HEIGHT = 29;
 const GRID_WIDTH = 20;
 
-function Background() {
+function Background({ className }: { className?: string}) {
   useEffect(() => {
     anime({
       targets: ".selector",
-      translateX: 10,
+      translateX: 40,
     });
   }, []);
 
@@ -35,7 +35,7 @@ function Background() {
   };
 
   return (
-    <div className="absolute z-0 w-full h-full overflow-hidden">
+    <div className={className}>
       <Grid />
     </div>
   );
