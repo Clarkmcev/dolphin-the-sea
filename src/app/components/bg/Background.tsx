@@ -44,7 +44,7 @@ function Background({ className }: { className?: string}) {
 function Motif() {
   return (
     <svg className="fill-secondary">
-      <circle cx="20" cy="20" r="20" color="red" className="selector" />
+      <circle cx="10" cy="10" r="10" color="red" className="selector" />
     </svg>
   );
 }
