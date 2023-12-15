@@ -32,7 +32,7 @@ function MusicPlayer() {
           onClick={toggleAudio}
         />
       </div>
-      <div className="overflow-y-scroll border-2 rounded flex-1">
+      <div className="overflow-y-scroll border-2 border-none rounded flex-1 scrollbar-hide">
         <Selection />
       </div>
     </div>
