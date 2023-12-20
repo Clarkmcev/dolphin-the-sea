@@ -16,10 +16,9 @@ bun dev
 
 ## Backlog
 
-- Responsiveness
-- User authentication
-- Backend implementation
-- Database
-- Song selections
-- Connect sound cloud API
-- Background animation
+- AWS S3 Bucket setup
+- Backend API setup with go
+- Database creation
+- Docker containerization 
+
+
