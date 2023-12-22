@@ -17,6 +17,7 @@ bun dev
 ## Backlog
 
 - AWS S3 Bucket setup
+- AWS Amplify
 - Backend API setup with go
 - Database creation
 - Docker containerization 
