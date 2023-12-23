@@ -3,8 +3,6 @@
 import React, { useEffect } from "react";
 import anime from "animejs/lib/anime.es.js";
 
-const GRID_SIZE = 100;
-
 const GRID_HEIGHT = 29;
 const GRID_WIDTH = 20;
 
@@ -43,7 +41,7 @@ function Background({ className }: { className?: string}) {
 
 function Motif() {
   return (
-    <svg className="fill-secondary">
+    <svg className="fill-secondary/20">
       <circle cx="10" cy="10" r="10" color="red" className="selector" />
     </svg>
   );
