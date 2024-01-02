@@ -14,8 +14,6 @@ function Background({ className }: { className?: string}) {
     });
   }, []);
 
-
-
   const Grid = () => {
     return (
       <div className="grid grid-cols-12 w-full gap-4">
