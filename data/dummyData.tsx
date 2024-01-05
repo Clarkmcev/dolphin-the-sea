@@ -4,15 +4,15 @@ export const songs = [
         artist: "Peggy Gou",
         album: "Starry Night",
         duration: 420,
-        url: "/data/starry-night.mp3",
-        image: "/data/starry-night.jpg",
+        url: "/static/starry-night.mp3",
+        image: "/static/starry-night.jpg",
     },
     {
         songName: "Burguesinha",
         artist: "Seu Jorge",
         album: "Burguesinha",
         duration: 420,
-        url: "/data/burguesinha.mp3",
-        image: "/data/burguesinha.jpg",
+        url: "/static/burguesinha.mp3",
+        image: "/static/burguesinha.jpg",
     }
 ]

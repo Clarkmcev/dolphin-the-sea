@@ -10,12 +10,13 @@ import { songs } from "../../data/dummyData";
 function MusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [selectedSong, setSelectedSong] = useState(0);
+  const [selectedMetaData, setSelectedMetaData] = useState(songs[selectedSong]);
 
   useEffect(() => {
-    console.log(songs[selectedSong]);
-  }, [selectedSong]);
+    console.log(selectedMetaData)
+  }, [selectedSong, selectedMetaData]);
 
-  const song = new Audio("/static/starry-night.mp3");
+  const song = new Audio(selectedMetaData.url);
   const audioRef = useRef<HTMLAudioElement>(song);
 
   function toggleAudio(): void {
@@ -34,7 +35,9 @@ function MusicPlayer() {
   }
 
   function nextSong(): void {
+    console.log(selectedMetaData)
     if (selectedSong + 1 !== songs.length) {
+      console.log('here')
       setSelectedSong(selectedSong + 1);
     } else {
       setSelectedSong(0);
