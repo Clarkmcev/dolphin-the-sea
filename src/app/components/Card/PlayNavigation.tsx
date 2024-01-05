@@ -9,15 +9,17 @@ import { NextIconOutline, NextIconSolid } from "../icons/NextIcon";
 interface Props {
   audioRef: React.MutableRefObject<HTMLAudioElement>;
   onClick: () => void;
+  backToStart: () => void;
+  nextSong: () => void;
   isPlaying: boolean;
 }
 
-function PlayNavigation({ audioRef, onClick, isPlaying }: Props) {
+function PlayNavigation({ audioRef, onClick, backToStart, nextSong, isPlaying }: Props) {
   return (
     <div className="flex w-full items-center justify-center py-4 space-x-20">
       {/* Left next button */}
       <CustomButton
-        onClick={onClick}
+        onClick={backToStart}
         outline={<NextIconOutline className={`${ICON_STYLING_SECONDARY} rotate-180`} />}
       />
       {isPlaying ? (
@@ -33,7 +35,7 @@ function PlayNavigation({ audioRef, onClick, isPlaying }: Props) {
       )}
       {/* Right next button */}
       <CustomButton
-        onClick={onClick}
+        onClick={nextSong}
         outline={<NextIconOutline className={ICON_STYLING_SECONDARY} />}
       />
     </div>

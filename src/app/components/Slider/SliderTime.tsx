@@ -53,7 +53,7 @@ function SliderTime({ audioRef }: Props) {
           className="cursor-pointer time-slider"
         />
       </div>
-      <p className="px-4 w-20  overflow-hidden text-ternary">
+      <p className="px-4 w-20 overflow-hidden text-ternary">
         {secondsToHms(duration - currentTime)}
       </p>
     </div>

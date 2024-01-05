@@ -1,15 +1,21 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import SliderTime from "./components/Slider/SliderTime";
 import Content from "./components/Card/Content";
 import PlayNavigation from "./components/Card/PlayNavigation";
 import Selection from "./components/Selection";
+import { songs } from "../../data/dummyData";
 
 function MusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [selectedSong, setSelectedSong] = useState(0);
 
-  const song = new Audio("/static/starry-night (1).mp3");
+  useEffect(() => {
+    console.log(songs[selectedSong]);
+  }, [selectedSong]);
+
+  const song = new Audio("/static/starry-night.mp3");
   const audioRef = useRef<HTMLAudioElement>(song);
 
   function toggleAudio(): void {
@@ -21,6 +27,20 @@ function MusicPlayer() {
     setIsPlaying(!isPlaying);
   }
 
+  function backToStart(): void {
+    audioRef.current.currentTime = 0;
+    audioRef.current.pause();
+    setIsPlaying(false);
+  }
+
+  function nextSong(): void {
+    if (selectedSong + 1 !== songs.length) {
+      setSelectedSong(selectedSong + 1);
+    } else {
+      setSelectedSong(0);
+    }
+  }
+
   return (
     <div className="z-20 flex-col flex h-screen">
       <div>
@@ -30,6 +50,8 @@ function MusicPlayer() {
           isPlaying={isPlaying}
           audioRef={audioRef}
           onClick={toggleAudio}
+          backToStart={backToStart}
+          nextSong={nextSong}
         />
       </div>
       <div className="overflow-y-scroll border-2 border-none rounded flex-1 scrollbar-hide">
