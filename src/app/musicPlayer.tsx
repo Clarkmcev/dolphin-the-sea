@@ -10,13 +10,16 @@ import { songs } from "../../data/dummyData";
 function MusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [selectedSong, setSelectedSong] = useState(0);
-  const [metadata, setMetadata] = useState<songMetadata>(
-    songs[selectedSong]
-  );
+  const [metadata, setMetadata] = useState<songMetadata>(songs[selectedSong]);
 
   useEffect(() => {
-    setMetadata(songs[selectedSong]);
-    handleSongChange();
+  
+    setTimeout(() => {
+      setMetadata(songs[selectedSong]);
+      handleSongChange();
+      toggleAudio()
+    }, 200)
+
   }, [selectedSong, metadata]);
 
   const song = new Audio(metadata.track);

@@ -19,7 +19,6 @@ function Content({ metadata }: Props) {
       <div className="flex flex-col space-y-2 text-fourth items-center my-20">
         <p className="text-3xl">{metadata.title}</p>
         <p className="text-lg text-ternary">{metadata.artist}</p>
-        <p>{metadata.track}</p>
       </div>
     </div>
   );
