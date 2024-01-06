@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 
 interface Props {
-  song: any;
+  id: number;
+  song: songMetadata;
+  isActive: boolean;
+  toggleSelection: (id: number) => void;
 }
 
-function Row({ song }: Props) {
+function SongRow({ id, song, isActive, toggleSelection }: Props) {
   return (
-    <div className="p-2 hover:bg-primary/20 group duration-150 transition-all">
-      <button className="p-4 w-full text-left group-hover:text-fourth">{song.title}</button>
+    <div className={`p-2 hover:bg-primary/20 group duration-150 transition-all ${isActive ? 'text-ternary' : 'group-hover:text-fourth'}`}>
+      <button onClick={() => toggleSelection(id)} className="p-4 w-full text-left">{song.title}</button>
     </div>
   );
 }
 
-export default Row;
+export default SongRow;

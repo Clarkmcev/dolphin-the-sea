@@ -11,10 +11,11 @@ interface Props {
   onClick: () => void;
   backToStart: () => void;
   nextSong: () => void;
+  priorSong: () => void;
   isPlaying: boolean;
 }
 
-function PlayNavigation({ audioRef, onClick, backToStart, nextSong, isPlaying }: Props) {
+function PlayNavigation({ audioRef, onClick, backToStart, nextSong, priorSong, isPlaying }: Props) {
   return (
     <div className="flex w-full items-center justify-center py-4 space-x-20">
       {/* Left next button */}
@@ -35,7 +36,7 @@ function PlayNavigation({ audioRef, onClick, backToStart, nextSong, isPlaying }:
       )}
       {/* Right next button */}
       <CustomButton
-        onClick={nextSong}
+        onClick={priorSong}
         outline={<NextIconOutline className={ICON_STYLING_SECONDARY} />}
       />
     </div>

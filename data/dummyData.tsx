@@ -8,7 +8,7 @@ export const songs = [
         track: "/static/starry-night.mp3",
         picture: "/static/starry-night.jpg",
     },
-    {
+    {   
         title: "Burguesinha",
         artist: "Seu Jorge",
         album: "Burguesinha",

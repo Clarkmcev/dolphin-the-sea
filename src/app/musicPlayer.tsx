@@ -13,13 +13,9 @@ function MusicPlayer() {
   const [metadata, setMetadata] = useState<songMetadata>(songs[selectedSong]);
 
   useEffect(() => {
-  
-    setTimeout(() => {
-      setMetadata(songs[selectedSong]);
-      handleSongChange();
-      toggleAudio()
-    }, 200)
-
+    setMetadata(songs[selectedSong]);
+    handleSongChange();
+    toggleAudio();
   }, [selectedSong, metadata]);
 
   const song = new Audio(metadata.track);
@@ -44,11 +40,26 @@ function MusicPlayer() {
     setIsPlaying(false);
   }
 
+  function priorSong(): void {
+    if (selectedSong - 1 !== -1) {
+      setSelectedSong(selectedSong - 1);
+    } else {
+      setSelectedSong(0);
+    }
+  }
+
   function nextSong(): void {
     if (selectedSong + 1 !== songs.length) {
       setSelectedSong(selectedSong + 1);
     } else {
       setSelectedSong(0);
+    }
+  }
+
+  function toggleSelection(id: number) {
+    setSelectedSong(id);
+    if (id === selectedSong) {
+      toggleAudio();
     }
   }
 
@@ -63,10 +74,11 @@ function MusicPlayer() {
           onClick={toggleAudio}
           backToStart={backToStart}
           nextSong={nextSong}
+          priorSong={priorSong}          
         />
       </div>
       <div className="overflow-y-scroll border-2 border-none rounded flex-1 scrollbar-hide">
-        <Selection />
+        <Selection selection={selectedSong} toggleSelection={toggleSelection} />
       </div>
     </div>
   );
