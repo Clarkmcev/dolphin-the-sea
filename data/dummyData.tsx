@@ -16,5 +16,14 @@ export const songs = [
         genre: "House",
         track: "/static/burguesinha.mp3",
         picture: "/static/burguesinha.jpg",
+    },
+    {   
+        title: "Elle pleut",
+        artist: "Nekfeu",
+        album: "Feu",
+        year: "20012",
+        genre: "Rap",
+        track: "/static/elle-pleut.mp3",
+        picture: "/static/elle-pleut.jpg",
     }
 ]

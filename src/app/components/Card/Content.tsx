@@ -6,7 +6,7 @@ interface Props {
   metadata: songMetadata;
 }
 
-function Content({ metadata }: Props) {
+function SongContent({ metadata }: Props) {
   return (
     <div className="flex-col flex items-center space-y-8 justify-center py-10">
       <Image
@@ -24,4 +24,4 @@ function Content({ metadata }: Props) {
   );
 }
 
-export default Content;
+export default SongContent;

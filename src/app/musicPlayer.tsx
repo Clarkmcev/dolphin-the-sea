@@ -1,22 +1,22 @@
 "use client";
 
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import SliderTime from "./components/Slider/SliderTime";
-import Content from "./components/Card/Content";
+import SongContent from "./components/Card/Content";
 import PlayNavigation from "./components/Card/PlayNavigation";
 import Selection from "./components/Selection";
 import { songs } from "../../data/dummyData";
 
 function MusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [selectedSong, setSelectedSong] = useState(0);
-  const [metadata, setMetadata] = useState<songMetadata>(songs[selectedSong]);
+  const [selectedSongId, setSelectedSongId] = useState(0);
+  const [metadata, setMetadata] = useState<songMetadata>(songs[selectedSongId]);
 
   useEffect(() => {
-    setMetadata(songs[selectedSong]);
+    setMetadata(songs[selectedSongId]);
     handleSongChange();
     toggleAudio();
-  }, [selectedSong, metadata]);
+  }, [selectedSongId]);
 
   const song = new Audio(metadata.track);
   const audioRef = useRef<HTMLAudioElement>(song);
@@ -41,32 +41,32 @@ function MusicPlayer() {
   }
 
   function priorSong(): void {
-    if (selectedSong - 1 !== -1) {
-      setSelectedSong(selectedSong - 1);
+    if (selectedSongId - 1 !== -1) {
+      setSelectedSongId(selectedSongId - 1);
     } else {
-      setSelectedSong(0);
+      setSelectedSongId(0);
     }
   }
 
   function nextSong(): void {
-    if (selectedSong + 1 !== songs.length) {
-      setSelectedSong(selectedSong + 1);
+    if (selectedSongId + 1 !== songs.length) {
+      setSelectedSongId(selectedSongId + 1);
     } else {
-      setSelectedSong(0);
+      setSelectedSongId(0);
     }
   }
 
   function toggleSelection(id: number) {
-    setSelectedSong(id);
-    if (id === selectedSong) {
-      toggleAudio();
+    setSelectedSongId(id);
+    if (id === selectedSongId) {
+      backToStart();
     }
   }
 
   return (
     <div className="z-20 flex-col flex h-screen">
       <div>
-        <Content metadata={metadata} />
+        <SongContent metadata={metadata} />
         <SliderTime audioRef={audioRef} />
         <PlayNavigation
           isPlaying={isPlaying}
@@ -74,11 +74,14 @@ function MusicPlayer() {
           onClick={toggleAudio}
           backToStart={backToStart}
           nextSong={nextSong}
-          priorSong={priorSong}          
+          priorSong={priorSong}
         />
       </div>
       <div className="overflow-y-scroll border-2 border-none rounded flex-1 scrollbar-hide">
-        <Selection selection={selectedSong} toggleSelection={toggleSelection} />
+        <Selection
+          selection={selectedSongId}
+          toggleSelection={toggleSelection}
+        />
       </div>
     </div>
   );

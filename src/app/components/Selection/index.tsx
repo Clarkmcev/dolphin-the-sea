@@ -8,10 +8,8 @@ interface Props {
 }
 
 function Selection({ selection, toggleSelection }: Props) {
-  const [active, setActive] = React.useState(false);
-
   return (
-    <div className="w-full overflow-auto overflow-y-auto">
+    <div className="w-full overflow-auto overflow-y-auto h-full">
       {songs.map((song: any, i: any) => (
         <SongRow id={i} isActive={selection === i} toggleSelection={toggleSelection} key={i} song={song} />
       ))}
