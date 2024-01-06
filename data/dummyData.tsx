@@ -1,18 +1,20 @@
 export const songs = [
     {
-        songName: "Starry Night",
+        title: "Starry Night",
         artist: "Peggy Gou",
         album: "Starry Night",
-        duration: 420,
-        url: "/static/starry-night.mp3",
-        image: "/static/starry-night.jpg",
+        year: "2002",
+        genre: "House",
+        track: "/static/starry-night.mp3",
+        picture: "/static/starry-night.jpg",
     },
     {
-        songName: "Burguesinha",
+        title: "Burguesinha",
         artist: "Seu Jorge",
         album: "Burguesinha",
-        duration: 420,
-        url: "/static/burguesinha.mp3",
-        image: "/static/burguesinha.jpg",
+        year: "2002",
+        genre: "House",
+        track: "/static/burguesinha.mp3",
+        picture: "/static/burguesinha.jpg",
     }
 ]
