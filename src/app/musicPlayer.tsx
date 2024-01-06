@@ -13,11 +13,15 @@ function MusicPlayer() {
   const [selectedMetaData, setSelectedMetaData] = useState(songs[selectedSong]);
 
   useEffect(() => {
-    console.log(selectedMetaData)
+    setSelectedMetaData(songs[selectedSong]);
   }, [selectedSong, selectedMetaData]);
 
   const song = new Audio(selectedMetaData.url);
   const audioRef = useRef<HTMLAudioElement>(song);
+
+  function handleSongChange() {
+    audioRef.current.src = selectedMetaData.url;
+  }
 
   function toggleAudio(): void {
     if (isPlaying) {
@@ -35,13 +39,12 @@ function MusicPlayer() {
   }
 
   function nextSong(): void {
-    console.log(selectedMetaData)
     if (selectedSong + 1 !== songs.length) {
-      console.log('here')
       setSelectedSong(selectedSong + 1);
     } else {
       setSelectedSong(0);
     }
+    handleSongChange()
   }
 
   return (
