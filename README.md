@@ -20,6 +20,10 @@ bun dev
 - AWS Amplify
 - Backend API setup with go
 - Database creation
-- Docker containerization 
+- Docker containerization
 
+## CRUD
 
+- Upload and add a song
+- Delete a song
+- Edit a song
