@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import React, { useEffect, useRef, useState } from "react";
-import SliderTime from "./components/Slider/SliderTime";
-import SongContent from "./components/Card/Content";
-import PlayNavigation from "./components/Card/PlayNavigation";
-import Selection from "./components/Selection";
-import { songs } from "../../data/dummyData";
+import React, { useEffect, useRef, useState } from 'react';
+import SliderTime from './components/Slider/SliderTime';
+import SongContent from './components/Card/Content';
+import PlayNavigation from './components/Card/PlayNavigation';
+import Selection from './components/Selection';
+import { songs } from '../../data/dummyData';
 
 function MusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
